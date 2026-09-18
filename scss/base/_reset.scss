@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-bg;
+    color: $color-text;
+    font-family: $font-base;
+    font-size: $fs-base;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primary;
+    transition: color $transition;
+
+    &:hover {
+        color: $color-secondary;
+    }
+}

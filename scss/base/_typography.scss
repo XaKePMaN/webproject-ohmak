@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+
+h1, h2, h3 {
+    color: $color-text;
+    margin-bottom: $space * 2;
+}
+
+h1 {
+    font-size: $fs-xl;
+}
+
+h2 {
+    font-size: $fs-lg;
+}
+
+p {
+    color: $color-muted;
+    margin-bottom: $space * 2;
+}

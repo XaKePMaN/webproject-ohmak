@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    background-color: $color-primary;
+    padding: $space * 2;
+    color: $color-bg;
+    box-shadow: $shadow;
+    
+    // Застосовуємо міксин flex-center та перевизначаємо justify-content для рознесення краями
+    @include flex-center(row);
+    justify-content: space-between;
+
+    @include respond-to(tablet) {
+        padding: $space * 3;
+    }
+
+    &__logo {
+        font-size: $fs-lg;
+        font-weight: bold;
+        color: $color-bg;
+        
+        @include respond-to(desktop) {
+            font-size: $fs-xl;
+        }
+    }
+
+    &__nav {
+        @include flex-center(row);
+        gap: $space * 2;
+
+        &-link {
+            color: $color-bg;
+            
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+}
