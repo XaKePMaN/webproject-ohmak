@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.alert {
+    padding: $space * 2;
+    border-radius: $radius;
+    font-family: $font-base;
+    font-size: $fs-base;
+    border-left: 4px solid transparent; // Акцентна смужка зліва
+    margin-bottom: $space * 2;
+    
+    @include flex-center(row);
+    justify-content: flex-start;
+    gap: $space * 1.5;
+
+    // --- МОДИФІКАТОРИ ---
+
+    &--success {
+        background-color: #e6f4ea;
+        color: #137333;
+        border-color: #137333;
+    }
+
+    &--error {
+        background-color: #fce8e6;
+        color: #c5221f;
+        border-color: #c5221f;
+    }
+
+    &--warning {
+        background-color: #fef7e0;
+        color: #b06000;
+        border-color: #b06000;
+    }
+}

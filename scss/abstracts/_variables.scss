@@ -21,3 +21,22 @@ $transition: 0.2s ease;
 // Точки адаптивності
 $bp-tablet: 768px;
 $bp-desktop: 1200px;
+
+// CSS-змінні для підтримки темної теми
+:root {
+    --color-bg: #{$color-bg};
+    --color-text: #{$color-text};
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-muted: #{$color-muted};
+    --color-border: #{$color-border};
+}
+
+[data-theme="dark"] {
+    --color-bg: #12181b;
+    --color-text: #e8eaed;
+    --color-primary: #4f9d75;
+    --color-secondary: #f6c050; // Світліший акцент для темної теми
+    --color-muted: #9aa0a6;
+    --color-border: #3c4043;
+}

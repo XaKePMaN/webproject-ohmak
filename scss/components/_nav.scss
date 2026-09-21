@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: $space * 2;
+    list-style: none; // Якщо використовуватиметься тег <ul>
+
+    &__link {
+        font-family: $font-base;
+        font-size: $fs-base;
+        color: $color-text;
+        text-decoration: none;
+        transition: color $transition;
+        padding: $space;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        // --- МОДИФІКАТОР ЕЛЕМЕНТА ---
+        &--active {
+            color: $color-primary;
+            font-weight: bold;
+            // Можна додати підкреслення для активного пункту
+            border-bottom: 2px solid $color-primary;
+        }
+    }
+}

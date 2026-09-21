@@ -1,0 +1,86 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.button {
+    // Базові стилі для всіх кнопок
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space * 1.5 $space * 3;
+    border: 1px solid transparent;
+    border-radius: $radius;
+    font-family: $font-base;
+    font-size: $fs-base;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color $transition, color $transition, border-color $transition, opacity $transition;
+    text-decoration: none; // Якщо кнопка буде тегом <a>
+
+    // --- МОДИФІКАТОРИ ---
+
+    // 1. Primary (Головна кнопка)
+    &--primary {
+        background-color: $color-primary;
+        color: $color-bg;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+        
+        &:active {
+            background-color: darken($color-primary, 15%);
+        }
+    }
+
+    // 2. Secondary (Другорядна кнопка)
+    &--secondary {
+        background-color: $color-secondary;
+        color: $color-bg;
+
+        &:hover {
+            background-color: darken($color-secondary, 10%);
+        }
+        
+        &:active {
+            background-color: darken($color-secondary, 15%);
+        }
+    }
+
+    // 3. Ghost (Прозора кнопка з контуром)
+    &--ghost {
+        background-color: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+
+        &:hover {
+            background-color: rgba($color-primary, 0.1);
+        }
+        
+        &:active {
+            background-color: rgba($color-primary, 0.2);
+        }
+    }
+
+    // --- СТАНИ ---
+
+    // Фокус для доступності (accessibility)
+    &:focus-visible {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+    }
+
+    // Стан вимкненої кнопки
+    &[disabled] {
+        background-color: $color-border;
+        color: $color-muted;
+        border-color: transparent;
+        cursor: not-allowed;
+        opacity: 0.7;
+        
+        // Скидаємо ефекти ховеру для вимкненої кнопки
+        &:hover {
+            background-color: $color-border;
+            color: $color-muted;
+        }
+    }
+}

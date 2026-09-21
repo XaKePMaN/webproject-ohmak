@@ -1,0 +1,81 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+    // Відступи між полями краще задавати через контейнер (наприклад, форму), але залишимо гнучкість
+    width: 100%;
+
+    &__label {
+        font-size: $fs-base;
+        font-weight: 500;
+        color: $color-text;
+    }
+
+    &__input {
+        padding: $space * 1.5;
+        border: 1px solid $color-border;
+        border-radius: $radius;
+        font-family: $font-base;
+        font-size: $fs-base;
+        color: $color-text;
+        background-color: $color-bg;
+        transition: border-color $transition, box-shadow $transition;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+        }
+    }
+
+    &__error {
+        display: none; // Приховано за замовчуванням
+        color: #d32f2f; // Стандартний червоний колір для помилок
+        font-size: 0.875rem;
+        font-weight: 500;
+        
+        // Додаємо іконку/позначку для кращої доступності
+        &::before {
+            content: '⚠ Помилка: ';
+            font-weight: bold;
+            margin-right: 4px;
+        }
+    }
+
+    // --- МОДИФІКАТОРИ СТАНУ БЛОКУ ---
+
+    &--invalid {
+        .field__input {
+            border-color: #d32f2f;
+            
+            &:focus {
+                box-shadow: 0 0 0 3px rgba(#d32f2f, 0.1);
+            }
+        }
+
+        .field__error {
+            display: block; // Показуємо повідомлення про помилку
+        }
+    }
+
+    &--disabled {
+        opacity: 0.7;
+
+        .field__input {
+            background-color: $color-border;
+            cursor: not-allowed;
+            
+            &:focus {
+                box-shadow: none;
+                border-color: $color-border;
+            }
+        }
+
+        .field__label {
+            cursor: not-allowed;
+        }
+    }
+}

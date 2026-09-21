@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    overflow: hidden;
+    transition: transform $transition, box-shadow $transition;
+    height: 100%; // Щоб картки в сітці були однакової висоти
+    
+    // ВАЖЛИВО: Жодних margin тут немає! Розміщення контролює контейнер.
+
+    &:hover {
+        box-shadow: $shadow;
+        transform: translateY(-4px);
+    }
+
+    &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover; // Щоб картинка не розтягувалася, а красиво обрізалася
+        background-color: $color-border; // Заглушка, якщо картинка не завантажилась
+    }
+
+    &__title {
+        font-size: $fs-lg;
+        color: $color-text;
+        padding: $space * 2 $space * 2 0;
+        margin-bottom: $space;
+    }
+
+    &__text {
+        font-size: $fs-base;
+        color: $color-muted;
+        padding: 0 $space * 2;
+        margin-bottom: $space * 2;
+        flex-grow: 1; // Притискає футер донизу, якщо тексту мало
+        
+        // Застосовуємо наш міксин для обрізання задовгого опису до 3 рядків
+        @include text-truncate(3);
+    }
+
+    &__footer {
+        padding: $space * 2;
+        border-top: 1px solid $color-border;
+        background-color: rgba($color-border, 0.2);
+        
+        @include flex-center(row);
+        justify-content: space-between;
+    }
+
+    // --- МОДИФІКАТОР ---
+
+    &--featured {
+        border: 2px solid $color-primary;
+        box-shadow: 0 4px 16px rgba($color-primary, 0.15);
+
+        // Можемо зробити заголовок виділеним для головної картки
+        .card__title {
+            color: $color-primary;
+        }
+    }
+}
