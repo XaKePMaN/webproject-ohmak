@@ -16,20 +16,20 @@
     // --- МОДИФІКАТОРИ ---
 
     &--success {
-        background-color: #e6f4ea;
-        color: #137333;
-        border-color: #137333;
+        background-color: var(--color-success-bg);
+        color: var(--color-success-text);
+        border-color: var(--color-success-border);
     }
 
     &--error {
-        background-color: #fce8e6;
-        color: #c5221f;
-        border-color: #c5221f;
+        background-color: var(--color-error-bg);
+        color: var(--color-error-text);
+        border-color: var(--color-error-border);
     }
 
     &--warning {
-        background-color: #fef7e0;
-        color: #b06000;
-        border-color: #b06000;
+        background-color: var(--color-warning-bg);
+        color: var(--color-warning-text);
+        border-color: var(--color-warning-border);
     }
 }

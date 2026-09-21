@@ -10,58 +10,5 @@
     <h1>Головна сторінка застосунку</h1>
     <p>Анотація: Це тестова сторінка-заглушка для відпрацювання навичок роботи з гілками та злиттям у Git.</p>
     <p>Розробник: Юрій Охмак</p>
-
-    <button class="button button--primary">Зберегти</button>
-    <button class="button button--secondary">Скасувати</button>
-    <button class="button button--ghost">Оновити</button>
-    <button class="button button--primary" disabled>Недоступно</button>
-
-    <!-- Тест поля форми з помилкою -->
-<div class="field field--invalid" style="max-width: 300px; margin: 20px;">
-    <label class="field__label">Назва книги</label>
-    <input type="text" class="field__input" value="Harry Poter">
-    <span class="field__error">Перевірте правильність написання</span>
-</div>
-
-<!-- Тест картки -->
-<div style="max-width: 300px; margin: 20px;">
-    <article class="card card--featured">
-        <img src="https://placehold.co/600x400" alt="Обкладинка" class="card__image">
-        <h3 class="card__title">Geometry Dash</h3>
-        <p class="card__text">Розвиває реакцію та спалює нерви.</p>
-        <div class="card__footer">
-            <span style="color: #6b7280;">Статус: Граю</span>
-            <button class="button button--primary" style="padding: 8px 16px;">Деталі</button>
-        </div>
-    </article>
-</div>
-
-<!-- Тест навігації -->
-<nav class="nav" style="padding: 20px; background: #eee;">
-    <a href="#" class="nav__link nav__link--active">Бібліотека</a>
-    <a href="#" class="nav__link">Статистика</a>
-    <a href="#" class="nav__link">Профіль</a>
-</nav>
-
-<!-- Тест сповіщень -->
-<div style="padding: 20px; max-width: 400px;">
-    <div class="alert alert--success">Запис успішно додано до бібліотеки.</div>
-    <div class="alert alert--error">Помилка: не вдалося зберегти зміни.</div>
-    <div class="alert alert--warning">Увага: ви не заповнили поле "Оцінка".</div>
-</div>
-
-<!-- Тест модального вікна (одразу відкрите завдяки modal--open) -->
-<div class="modal modal--open">
-    <div class="modal__overlay"></div>
-    <div class="modal__window">
-        <button class="modal__close">✕</button>
-        <h2 style="margin-bottom: 16px;">Видалити запис?</h2>
-        <p style="margin-bottom: 24px; color: #6b7280;">Ви дійсно хочете видалити "Geometry Dash" з бібліотеки? Цю дію неможливо скасувати.</p>
-        <div style="display: flex; gap: 8px; justify-content: flex-end;">
-            <button class="button button--ghost">Скасувати</button>
-            <button class="button button--primary" style="background-color: #d32f2f;">Видалити</button>
-        </div>
-    </div>
-</div>
 </body>
 </html>

@@ -12,19 +12,19 @@
         font-size: $fs-base;
         color: $color-text;
         text-decoration: none;
-        transition: color $transition;
-        padding: $space;
+        transition: color var(--transition);
+        padding: var(--space);
 
         &:hover {
-            color: $color-primary;
+            color: var(--color-primary);
         }
 
         // --- МОДИФІКАТОР ЕЛЕМЕНТА ---
         &--active {
-            color: $color-primary;
+            color: var(--color-primary);
             font-weight: bold;
             // Можна додати підкреслення для активного пункту
-            border-bottom: 2px solid $color-primary;
+            border-bottom: 2px solid var(--color-primary);
         }
     }
 }

@@ -2,10 +2,10 @@
 @use '../abstracts/mixins' as *;
 
 .header {
-    background-color: $color-primary;
-    padding: $space * 2;
-    color: $color-bg;
-    box-shadow: $shadow;
+    background-color: var(--color-primary);
+    padding: $space * 2;;
+    color: var(--color-bg);
+    box-shadow: var(--shadow);
     
     // Застосовуємо міксин flex-center та перевизначаємо justify-content для рознесення краями
     @include flex-center(row);
@@ -16,24 +16,24 @@
     }
 
     &__logo {
-        font-size: $fs-lg;
+        font-size: var(--fs-lg);
         font-weight: bold;
-        color: $color-bg;
+        color: var(--color-bg);
         
         @include respond-to(desktop) {
-            font-size: $fs-xl;
+            font-size: var(--fs-xl);
         }
     }
 
     &__nav {
         @include flex-center(row);
-        gap: $space * 2;
+        gap: $space * 2;;
 
         &-link {
-            color: $color-bg;
+            color: var(--color-bg);
             
             &:hover {
-                color: $color-secondary;
+                color: var(--color-secondary);
             }
         }
     }
