@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrealm - Особиста цифрова бібліотека</title>
+    
+    <!-- Підключаємо наші стилі -->
     <link rel="stylesheet" href="css/main.css">
-    <title>Irrealm - особиста цифрова бібліотека</title>
 </head>
 <body>
-    <h1>Головна сторінка застосунку</h1>
-    <p>Анотація: Це тестова сторінка-заглушка для відпрацювання навичок роботи з гілками та злиттям у Git.</p>
-    <p>Розробник: Юрій Охмак</p>
+
+    <!-- Шапка сайту -->
+    <header class="header">
+        <div class="header__logo">Irrealm</div>
+        <nav class="nav">
+            <a href="#" class="nav__link nav__link--active">Бібліотека</a>
+            <a href="#" class="nav__link">Статистика</a>
+            <a href="#" class="nav__link">Профіль</a>
+        </nav>
+    </header>
+
+    <!-- ОСНОВНИЙ КОНТЕНТ (Сюди main.js вставить картки) -->
+    <main style="min-height: calc(100vh - 200px);">
+        <!-- Поки JavaScript завантажується, тут може бути порожньо або якийсь лоадер -->
+    </main>
+
+    <!-- Підвал сайту -->
+    <footer class="footer">
+        <p class="footer__text">© 2026 Irrealm. Усі права захищено.</p>
+        <a href="#" class="footer__link">Умови використання</a>
+    </footer>
+
+    <!-- Підключаємо головний скрипт як модуль -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
